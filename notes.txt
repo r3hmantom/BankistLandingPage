@@ -1,0 +1,50 @@
+How DOM really works
+dom is basically interface bw our js and browser, or html documents that are rendered in and by the browser, dom tree is generated from html document , dom is a complex api
+
+in dom there are different types of nodes, 
+some nodes are html element
+others are just text
+
+How DOM API is organized behind the scenes
+every single node in the dom tree is of the type 'node'
+each node is represented in javascript by an object, this object gets access to special node methods and properties such as text content, child nodes, parent nodes, clone nodes and manymore
+
+NODE type has some CHILD types
+1-Element   <p>Paragraph</p>   (isme p element pr zor he)
+2-Text      <p>Paragraph</p>   (isme p element ke andr text pr zor he)
+3-Comment   <!-- comment --->  (because html sari dom me ayegi, to comment bhi ayega)
+4-Document 
+
+each element internally will be represented as an object
+
+ELEMENT TYPE has internally child type
+
+1-HTMLElement   which is further divided into HTMLButtonElement , HTMLDivElement  and each type for evey html element...
+
+
+
+
+ALL OF THIS REALLY WORKS BECAUSE OF INHERITANCE
+all the child types will also get access to method and properties of parent node type
+jese HTMLButtonElement ke pas Node ki sari properties hongi, iska mtlb hm ye keh skte ke HTMLButtonElement , HTMLElement bhi he or node bhi
+
+
+
+now DOM API needs a way to allow all node types to listen to events, we listen by  adding addEventListener, this works because EVENT TARGET (a new type which is the parent of node type and window (global object)  ) 
+
+
+see diagram vide 004 - how dom works behind the scenes
+
+
+ GPT VERSION 
+ DOM, or Document Object Model, is an interface between our JavaScript code and the HTML documents that are rendered in and by the browser. The DOM tree is generated from the HTML document, and the DOM API is a complex API with different types of nodes.
+
+In the DOM, there are different types of nodes, some of which are HTML elements, and others are just text. Every single node in the DOM tree is of the type 'node', and each node is represented in JavaScript by an object. This object gets access to special node methods and properties, such as text content, child nodes, parent nodes, clone nodes, and many more.
+
+The NODE type has several CHILD types, including Element, Text, Comment, and Document. Each element is internally represented as an object, and the ELEMENT TYPE has internally child types, including HTMLElement, which is further divided into HTMLButtonElement, HTMLDivElement, and each type for every HTML element.
+
+All of this works because of inheritance. All the child types will also get access to the methods and properties of the parent node type. For example, HTMLButtonElement will have access to all of Node's properties, which means that HTMLButtonElement is also a type of HTMLElement and a type of Node.
+
+The DOM API needs a way to allow all node types to listen to events, and we can listen to events by adding an event listener using the addEventListener method. This works because EVENT TARGET is a new type that is the parent of node type and window (global object).
+
+You can refer to the diagram in video 004 to better understand how DOM works behind the scenes.
