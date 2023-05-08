@@ -83,3 +83,18 @@ document.addEventListener('keydown', function (e) {
 
 // //old method- DOM traversing
 // message.parentElemenet.removeChild(message)
+
+// Smooth Scrolling
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', e => {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords.bottom);
+  window.scrollTo({
+    left: s1coords.x + window.scrollX,
+    top: s1coords.y + window.scrollY,
+    behavior: 'smooth',
+  });
+});
